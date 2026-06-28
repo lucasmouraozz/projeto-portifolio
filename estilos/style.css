@@ -7,3 +7,374 @@
   --destaque-inverso
   --fundo-card
 */
+
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --fundo-principal: #F8FAFC;
+  --fundo-card:  #FFFFFF;
+  --texto-inverso: #FFFFFF;
+  --texto: #0F172A;
+  --destaque-inverso: #4F46E5;
+  --destaque: #6366F1;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5em;
+  background-color: var(--fundo-principal);
+  color: var(--texto);
+  transition: background-color 1s, color 1s;
+}
+
+body.escuro {
+  --fundo-principal: #0F172A;
+  --texto: #F8FAFC;
+  --texto-inverso: #FFFFFF;
+  --destaque: #8B5CF6;
+  --destaque-inverso: #7C3EAD;
+  --fundo-card: #1E293B;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body.escuro .barra {
+  background-color: #334153;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  background-color: var(--destaque);
+  margin-bottom: 10px;
+  padding: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav#menu ul {
+  display: flex;
+  gap: 15px;
+  list-style-type: none;
+}
+
+nav#menu a {
+  text-decoration: none;
+  color: var(--texto-inverso);
+  font-weight: 600;
+  padding: 12px 15px;
+  border-radius: 5px;
+  transition: background-color 0.5s, color 0.5;
+}
+
+nav#menu a:hover {
+  background-color: var(--destaque-inverso);
+  color: var(--destaque);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 90vw 1fr;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+#ficha {
+  background-color: var(--fundo-card);
+  padding: 20px;
+  border-radius: 18px;
+  grid-column: 2;
+  margin-bottom: 10px;
+}
+
+section#ficha img.foto {
+  width: 200px;
+  aspect-ratio: 1.1;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 5px solid var(--fundo-card);
+  outline: 5px solid var(--destaque);
+  box-shadow: 0px 0px 5px;
+  display: block;
+  margin: auto;
+  margin-bottom: 35px;
+}
+
+section#ficha img.foto:hover {
+  transform: scale(1.03);
+  transition: .4s;
+  box-shadow: 0px 0px 12px var(--destaque);
+}
+
+section#ficha > h1 {
+  color: var(--destaque);
+  margin: 25px 0px;
+  font-size: 1.9em;
+  text-align: center;
+}
+
+.text {
+  text-align: justify;
+  text-indent: 15px;
+}
+
+div#social {
+  display: flex;
+  justify-content: center;
+  font-size: 1.7em;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+div#social a {
+  color: var(--destaque);
+  transition: color 0.5s;
+  font-size: 1.1em;
+  transition: .3s;
+}
+
+div#social > a:hover {
+  color: var(--destaque-inverso);
+  transform: translateY(-5px) scale(1.1);
+}
+
+section#detalhes {
+  grid-column: 2;
+}
+
+article {
+  background-color: var(--fundo-card);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 18px;
+}
+
+section h1 {
+  color: var(--destaque);
+  margin: 45px 0px 80px 0px;
+  text-align: left;
+  font-size: 1.5em;
+}
+
+section > h1#subtítulo {
+  text-align: center;
+}
+
+section h2 {
+   color: var(--destaque);
+   font-size: 1.5em;
+   margin-bottom: 20px;
+   text-align: left
+}
+
+#skills-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+ .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nome {
+  font-weight: bold;
+  color: var(--texto);
+  margin-top: 10px;
+}
+
+.porcent {
+  font-weight: bold;
+  color: var(--destaque);
+  margin-top: 20px;
+}
+
+.barra {
+  width: 100%;
+  height: 10px;
+  background-color: #DBE4F0;
+  border-radius: 10px;
+}
+
+.progresso {
+  height: 100%;
+  background: linear-gradient(90deg, #6366F1, #4F46E5);
+  border-radius: 10px;
+}
+
+#formação-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+  padding: 5px;
+}
+
+.curso {
+  background-color: var(--fundo-principal);
+  border-radius: 18px;
+  border-left: 5px solid var(--destaque-inverso);
+  padding-left: 15px;
+  transition: border-width 0.4s, border-color 0.4s;
+}
+
+.curso:hover {
+  border-left-width: 15px;
+  cursor: pointer;
+  border-color: var(--destaque);
+}
+
+.período {
+  font-size: 0.8em;
+  font-weight: 800;
+  color: var(--texto);
+}
+
+.instituição {
+  color: var(--destaque-inverso);
+  font-size: 1.1em;
+}
+
+#projeto-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+
+.projeto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--fundo-principal);
+  padding: 10px;
+  border-radius: 18px;
+  border-left: 5px solid var(--destaque-inverso);
+  transition: border-color 0.4s, border-width 0.4s, transform .3s, box-shadow .3s;
+}
+
+.projeto:hover {
+  border-color: var(--destaque);
+  border-left-width: 10px;
+  cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 30px rgba(0,0,0,.15);
+}
+
+.projeto img {
+  transition: 2s;
+}
+
+.projeto:hover img {
+  transform: scale(1.02);
+}
+.foto {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+h3.título {
+  margin-bottom: 10px;
+  color: var(--texto);
+  text-align: center;
+}
+
+p.título {
+  margin-bottom: 10px;
+}
+
+p.parágrafo {
+  text-align: justify;
+  text-indent: 15px;
+}
+
+footer {
+  background-color: var(--destaque);
+  color: var(--texto-inverso);
+  text-align: center;
+  padding: 10px;
+}
+
+footer a {
+  color: var(--texto-inverso);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: var(--destaque-inverso);
+}
+
+/* media para telas maiores */
+
+@media screen and (min-width: 992px) {
+  main {
+    grid-template-columns: auto 380px 1fr auto;
+  }
+  
+  section#ficha {
+    grid-column: 2 / 3;
+    height: fit-content;
+    position: sticky;
+    top: 91px;
+  }
+  
+  section#detalhes {
+    grid-column: 3 / 4;
+  }
+  
+  #skills-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projeto {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 20px;
+    overflow: hidden;
+  }
+
+  .foto {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .projeto-info {
+    max-width: 80%;
+  }
+
+  #projeto-container.foto {
+    aspect-ratio: 1/1;
+    max-width: 20%;
+    max-height: 200px;
+  }
+  #btn {
+    display: none;
+  }
+}
+
+/*animação */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
